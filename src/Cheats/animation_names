@@ -1,0 +1,16 @@
+Idle
+    IdleAction
+    IdleEntry
+    IdleExit
+Sushi
+    SushiAction
+    SushiEntry
+    SushiExit
+Music
+    MusicAction
+    MusicEntry
+    MusicExit
+Journal
+    JournalAction
+    JournalEntry
+    Journal Exit
