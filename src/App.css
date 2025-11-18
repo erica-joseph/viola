@@ -1,3 +1,17 @@
 body{
   background: linear-gradient(to bottom, #082e68, #0d6cb1, #98c8e8); 
 }
+
+.overhead{
+  display: flex;
+  position: relative;
+}
+
+.model{
+  display: flex;
+}
+
+.interface{
+  display: flex;
+  position: absolute;
+}

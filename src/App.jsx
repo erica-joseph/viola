@@ -1,17 +1,42 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import Model from './Model.jsx'
+import Interface from './Interface.jsx'
 import './App.css'
+import html2canvas from "html2canvas";
 
 function App() {
   const [count, setCount] = useState(0)
+  const [pose, setPose] = useState("Music"); // default pose
+  const [angle, setAngle] = useState("0"); 
+  const modelRef = useRef();  // Ref to Model
+
+  const takeSnapshot = () => {
+    if (!modelRef.current || !modelRef.current.renderer) return;
+
+    const canvas = modelRef.current.renderer.domElement;
+    const imgData = canvas.toDataURL("image/png");
+
+    const link = document.createElement("a");
+    link.href = imgData;
+    link.download = "snapshot.png";
+    link.click();
+  };  
 
   return (
     <>
-      <Model/>
+    <div className='overhead'>
+      <div className ="model">
+       <Model ref={modelRef} currentPose={pose} currentAngle ={angle}/>
+      </div>
+      <div className ="interface">
+      <Interface changePose={setPose} changeAngle ={setAngle}/>
+      <button onClick={() => takeSnapshot()}>Take Snapshot</button>
+      </div>
+    </div>
     </>
   )
 }
 
-export default App
+export default App;
