@@ -37,7 +37,13 @@ function App() {
 
   return () => window.removeEventListener("resize", checkRatio);
 }, []);
+const [modelKey, setModelKey] = useState(0);
 
+useEffect(() => {
+  const handleResize = () => setModelKey(k => k + 1);
+  window.addEventListener("resize", handleResize);
+  return () => window.removeEventListener("resize", handleResize);
+}, []);
 
   return (
     <>
@@ -47,7 +53,7 @@ function App() {
 }}>
     <div className='overhead'>
       <div className ="model">
-       <Model onLoaded={() => setIsModelLoaded(true)}  ref={modelRef} currentPose={pose} currentAngle ={angle}/>
+       <Model key={modelKey}  onLoaded={() => setIsModelLoaded(true)}  ref={modelRef} currentPose={pose} currentAngle ={angle}/>
       </div>
       <div className ="interface">
        <Interface/>
@@ -56,8 +62,7 @@ function App() {
     <div className ="controls">
       <Controls changePose={setPose} changeAngle ={setAngle}/>
     </div>
-    <div className='noise' style={{ backgroundImage: `url(${theNoise})` }}>
-    </div> 
+
     </div>
 
     {isPortrait && (
@@ -73,7 +78,8 @@ function App() {
           <h1>Loading…</h1>
       </div>
     )}
-
+    <div className='noise' style={{ backgroundImage: `url(${theNoise})` }}>
+    </div> 
   </>
   )
 }

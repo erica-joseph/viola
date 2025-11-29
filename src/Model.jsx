@@ -108,15 +108,7 @@ const helper = new THREE.CameraHelper(camera);
     //const controls = new OrbitControls(camera, renderer.domElement);
     //controls.enableDamping = true;
 
-    // Resize handler
-    const handleResize = () => {
-      const width = mountRef.current.clientWidth || window.innerWidth;
-      const height = mountRef.current.clientHeight || window.innerHeight;
-      camera.aspect = width / height;
-      camera.updateProjectionMatrix();
-      renderer.setSize(width, height);
-    };
-    window.addEventListener('resize', handleResize);
+
 
     // Load Model
     const loader = new GLTFLoader();
@@ -276,9 +268,9 @@ function playAndWait(action) {
     action.play();
   });
 }
-
-  
 }, [currentAngle]);
+
+
 
   return( 
   <>
