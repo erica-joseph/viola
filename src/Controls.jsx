@@ -6,27 +6,46 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass.js';
+import { Spotify } from "react-spotify-embed";
+
 
 import Model from "./Model";
-import PoseButton from "./PoseButton";
 import { mx_fractal_noise_vec3 } from 'three/src/nodes/materialx/lib/mx_noise.js';
 
-function Interface({ changePose, changeAngle}) {
+function Controls({ changePose, changeAngle}) {
 
   return (
     <>
-    <div>
-      <button onClick={() => changePose("Idle")}>Idle</button>
-      <button onClick={() => changePose("Journal")}>Journal</button>
-      <button onClick={() => changePose("Music")}>Music</button>
-      <button onClick={() => changePose("Sushi")}>Sushi</button>
-        <br></br>
-      <button onClick={() => changeAngle("0")}>Front</button>
-      <button onClick={() => changeAngle("180")}>Back</button>
+    <div className='controlContainer'>
+      <div className='spotifyControl'>
+      <iframe className='musicFrame'
+        src="https://open.spotify.com/embed/playlist/4cNEdK9UrGzz52C88jVVfb?utm_source=generator"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+     />
+      </div>
+      <div className='posePlayerControl'>
+        <div className='posePlayerTitleControl'>
+          Pose Player
+        </div>
+        <div className='poseControl'>
+          <div className='directionControl'>
+            <button className = 'myButton' onClick={() => changeAngle("0")}>Front</button>
+            <button className = 'myButton' onClick={() => changeAngle("180")}>Back</button>
+          </div>
+          <div className='animationControl'>
+            <button className = 'myButton' onClick={() => changePose("Idle")}>Idle</button>
+            <button className = 'myButton' onClick={() => changePose("Journal")}>Journal</button>
+            <button className = 'myButton' onClick={() => changePose("Music")}>Music</button>
+            <button className = 'myButton' onClick={() => changePose("Sushi")}>Sushi</button>            
+          </div>
+        </div>
+      </div>
     </div>
+
 
     </>
   );
 }
 
-export default Interface;
+export default Controls;

@@ -2,13 +2,13 @@
 
 import '../App.css'
 
-function PageFour() {
+function PageFour({id}) {
 
   return (
     <>
     
     {/* Page Two */}
-    <div className='pageFourContainer'>
+    <div id={id} className='pageFourContainer'>
       {/* Sketchbook; the base */}
       <div className='sketchbookContainerPageFour'>
         <img className='imageOnePageFour' id = 'sketchbook' style = {{height: "80vh"}} src ='src/assets/Images/PageFour_Sketchbook.png'/>

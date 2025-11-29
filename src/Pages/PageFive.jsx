@@ -2,7 +2,7 @@
 
 import '../App.css'
 
-function PageFive() {
+function PageFive({id}) {
   const tabs = [
     {id: 1, text: "LinkedIn", img: "src/assets/Images/Contact_TabOne.png", link: "https://www.linkedin.com/in/erica-joseph-93b3501b1/"},
     {id: 2, text: "GitHub", img: "src/assets/Images/Contact_TabTwo.png", link: "https://github.com/erica-joseph"},
@@ -15,7 +15,7 @@ function PageFive() {
     <>
     
     {/* Page Five */}
-    <div className='pageFiveContainer'>
+    <div id={id} className='pageFiveContainer'>
       {/* Row 1 */}
       <div className='rowOnePageFive'>
         <div className='contentPageFive'>

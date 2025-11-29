@@ -2,7 +2,7 @@
 
 import '../App.css'
 
-function PageThree() {
+function PageThree({id}) {
 
   const phoneContents = [
     {id: 1, img: "src/assets/Images/Phones_Cat.png", content: "Hello World!", link: "https://www.youtube.com/embed/NyAhEUBHj_8?si=YPWO3m1_QhUnW2fS"},
@@ -15,14 +15,14 @@ function PageThree() {
     <>
     
     {/* Page Two */}
-    <div className='pageTwoContainer'>
+    <div id={id} className='pageTwoContainer'>
       {/* Row 1  ${menu_background}*/}
       <div className='rowOnePageTwo'>
         {phoneContents.map((phone, index) => (
         <div className='phonePageThree' style = {{backgroundImage: `url(${phone.img})`}}>
           <div className='phoneScreenPageThree'>
             <div className='phoneLightPageThree'>
-              <div class="box">
+              <div className="box">
                 <iframe className = 'myFrame' src={phone.link} width = "100%" height = "500px">
                 </iframe>
               </div> 

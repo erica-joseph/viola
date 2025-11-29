@@ -2,13 +2,13 @@
 
 import '../App.css'
 
-function PageOne() {
+function PageOne({id}) {
 
   return (
     <>
     
     {/* Page One */}
-    <div className='pageOneContainer'>
+    <div id={id} className='pageOneContainer'>
       {/* Row 1 */}
       <div className='rowOnePageOne'>
         <img src = 'src/assets/Images/Viola_Images_002.png' className='headerPageOne'/>

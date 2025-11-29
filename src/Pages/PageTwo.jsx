@@ -2,13 +2,13 @@
 
 import '../App.css'
 
-function PageTwo() {
+function PageTwo({id}) {
 
   return (
     <>
     
     {/* Page Two */}
-    <div className='pageTwoContainer'>
+    <div id={id} className='pageTwoContainer'>
       {/* Row 1 */}
       <div className='rowOnePageTwo'>
         <img src = 'src/assets/Images/Note.png' className='notePageTwo'/>

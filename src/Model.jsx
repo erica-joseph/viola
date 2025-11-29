@@ -43,7 +43,6 @@ const camera = new THREE.OrthographicCamera(
 );
 
 const helper = new THREE.CameraHelper(camera);
-scene.add(helper);
 
     camera.position.set(0,7, 100);
     camera.rotation.set(
