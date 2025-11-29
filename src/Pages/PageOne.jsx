@@ -11,7 +11,7 @@ function PageOne({id}) {
     <div id={id} className='pageOneContainer'>
       {/* Row 1 */}
       <div className='rowOnePageOne'>
-        <img src = 'src/assets/Images/Viola_Images_002.png' className='headerPageOne'/>
+        <img src = '/src/assets/Images/Viola_Images_002.png' className='headerPageOne'/>
       </div>
 
       {/* Row 2 */}
@@ -19,7 +19,7 @@ function PageOne({id}) {
         <div className='nameLPageOne'>
           ER
         </div>
-        <img src = 'src/assets/Images/Viola_Center.png' className='imagePageOne'/>
+        <img src = '/src/assets/Images/Viola_Center.png' className='imagePageOne'/>
         <div className='nameRPageOne'>
           ICA
         </div>
