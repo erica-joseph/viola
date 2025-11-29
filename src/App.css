@@ -28,7 +28,7 @@ body{
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(255, 255, 255), rgba(0, 0, 0, 0));
-}rgb(255, 255, 255)
+}
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
@@ -50,7 +50,7 @@ body{
   display: flex;
   position: absolute;
   width: 100%;
-  
+
 }
 
 .page{
