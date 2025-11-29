@@ -9,10 +9,10 @@ import minus from '../assets/Images/Phones_Minus.png'
 function PageThree({id}) {
 
   const phoneContents = [
-    {id: 1, img: {cat}, content: "Hello World!", link: "https://www.youtube.com/embed/NyAhEUBHj_8?si=YPWO3m1_QhUnW2fS"},
-    {id: 2, img: {clear}, content: "Hello World!", link: "https:/ericajoseph.com/"},
-    {id: 3, img: {flower}, content: "Hello World!", link: "https://erica-joseph.github.io/Portfolio/"},
-    {id: 4, img: {minus}, content: "Hello World!", link: "https://www.lakay25.com/"}
+    {id: 1, img: cat, content: "Hello World!", link: "https://www.youtube.com/embed/NyAhEUBHj_8?si=YPWO3m1_QhUnW2fS"},
+    {id: 2, img: clear, content: "Hello World!", link: "https:/ericajoseph.com/"},
+    {id: 3, img: flower, content: "Hello World!", link: "https://erica-joseph.github.io/Portfolio/"},
+    {id: 4, img: minus, content: "Hello World!", link: "https://www.lakay25.com/"}
   ]
 
   return (

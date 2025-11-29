@@ -19,6 +19,10 @@ function App() {
   const [isModelLoaded, setIsModelLoaded] = useState(false);
   const [isPortrait, setIsPortrait] = useState(false);
 
+  const handleReload = () => {
+    window.location.reload();
+  };
+
   useEffect(() => {
   function checkRatio() {
     const h = window.innerHeight;
@@ -59,7 +63,7 @@ function App() {
     {isPortrait && (
       <div className="portraitScreen">
         <img className='logo' src = {portrait} />
-        <h1>Please rotate your device</h1>
+        <h1>Please rotate your device and refresh</h1>
       </div>
     )}
 

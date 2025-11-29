@@ -11,12 +11,12 @@ import six from '../assets/Images/Contact_TabSix.png'
 
 function PageFive({id}) {
   const tabs = [
-    {id: 1, text: "LinkedIn", img: {one}, link: "https://www.linkedin.com/in/erica-joseph-93b3501b1/"},
-    {id: 2, text: "GitHub", img: {two}, link: "https://github.com/erica-joseph"},
-    {id: 3, text: "Website", img: {three}, link: "https://ericajoseph.com/"},
-    {id: 4, text: "Instagram", img: {four}, link: "https://www.instagram.com/hey_kidseatfree"},
-    {id: 5, text: " ", img: {five}, link: ""},
-    {id: 6, text: "e-mail", img: {six}, link: "ericagjoseph@outlook.com"}
+    {id: 1, text: "LinkedIn", img: one, link: "https://www.linkedin.com/in/erica-joseph-93b3501b1/"},
+    {id: 2, text: "GitHub", img: two, link: "https://github.com/erica-joseph"},
+    {id: 3, text: "Website", img: three, link: "https://ericajoseph.com/"},
+    {id: 4, text: "Instagram", img: four, link: "https://www.instagram.com/hey_kidseatfree"},
+    {id: 5, text: " ", img: five, link: ""},
+    {id: 6, text: "e-mail", img: six, link: "ericagjoseph@outlook.com"}
   ]
   return (
     <>
@@ -24,7 +24,7 @@ function PageFive({id}) {
     {/* Page Five */}
     <div id={id} className='pageFiveContainer'>
       {/* Row 1 */}
-      <div className='rowOnePageFive' style ={{backgroundImage: {head}}}>
+      <div className='rowOnePageFive' style ={{backgroundImage: `url('${head}')`}}>
         <div className='contentPageFive'>
             <div className='contentTitlePageFive'>Swing on by to learn more!</div>
 
