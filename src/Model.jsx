@@ -90,6 +90,7 @@ scene.add(helper);
     scene.add( rimLight );    
 
     //Light Helpers
+    /*
     const keyHelper = new THREE.DirectionalLightHelper(keyLight, 5, 0xff0000); // size, color
     scene.add(keyHelper);
 
@@ -101,7 +102,7 @@ scene.add(helper);
 
     const lightHelper = new THREE.DirectionalLightHelper(light, 5, 0x1AFF00); // size, color
     scene.add(lightHelper);
-
+    */
 
     // Controls
     //const controls = new OrbitControls(camera, renderer.domElement);
@@ -136,12 +137,13 @@ scene.add(helper);
             node.rotation.set(0, 0, 0);
             node.scale.set(1, 1, 1);
           }
-        
+        /*
         if (node.name === "Armature001") {
             const skeletonHelper = new SkeletonHelper(node);
             skeletonHelper.material.linewidth = 2;
             scene.add(skeletonHelper);
         }
+        */
 
         if(node.isSkinnedMesh){
           if(node.name === "Cube005"){
@@ -149,6 +151,7 @@ scene.add(helper);
             node.visible = false;
           }
         }
+        
         });
 
         mixerRef.current = new THREE.AnimationMixer(modelRef.current);
@@ -225,7 +228,6 @@ return () => {
  });
 
  actionsRef.current[currentPose + "Action"]?.reset().play();
-
 
  }, [currentPose, actionsLoaded]);
 

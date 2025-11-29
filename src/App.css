@@ -1,10 +1,39 @@
 body{
   background: linear-gradient(to bottom, #082e68, #0d6cb1, #98c8e8); 
+  color: white;
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
 }
 
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+/* Structure */
 .overhead{
   display: flex;
-  position: relative;
+  align-items: center;
+  width: 100%;
 }
 
 .model{
@@ -14,4 +43,495 @@ body{
 .interface{
   display: flex;
   position: absolute;
+  width: 100%;
+}
+
+.controls{
+  display: flex;
+  position: absolute;
+}
+
+.page{
+  display: -webkit-inline-box;
+  overflow-x: auto;
+  overflow-y: auto;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Page One */
+/* This page contains just album cover. It needs Three distinct rows. 
+Row 1 requires one column that is centered; image of the model
+Row 2 requires 3 columns, with the center column being the image of the model
+Row 3 requires 3 columns and is centered but the columns will not fill the entire width of the page
+*/
+
+.pageOneContainer{
+  width: 60%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Row 1 */
+.rowOnePageOne{
+}
+
+.headerPageOne{
+  height: 20vh;
+  display: flex;
+}
+
+/* Row 2 */
+.rowTwoPageOne{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: "Alex Brush", cursive;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 10vh;
+  text-align: center;
+}
+
+.nameLPageOne{
+  width: 100%;
+}
+
+.imagePageOne{
+  height: 75vh;
+}
+
+.nameRPageOne{
+  width: 100%;
+}
+
+/* Row 3 */
+.rowThreePageOne{
+  display: flex;
+  flex-direction: row;  
+}
+
+.tagLPageOne{
+}
+
+.tagPageOne{
+}
+
+.tagRPageOne{
+}
+
+/* Page Two */
+/* This page just contains the notebook page. Just oen row and one column. The real task is just alignment.
+Row 1; Column 1
+*/
+
+.pageTwoContainer{
+  width: 70%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.rowOnePageTwo{
+  display: flex;
+  flex-direction: row;
+}
+
+.notePageTwo{
+  width: 100%;
+  height: 90vh;  
+}
+
+/* Page Three */
+/* This page contains the phones. They are stored and invoked in an array.
+Row 1 requires the containers for the phone then the phone's individual contents.
+The phone contents will be phone -> screen glow -> screen
+*/
+
+.pageThreeContainer{
+  background-color: #082e68;
+}
+
+.phonePageThree{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  width: 40vh;
+  position: relative;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.phoneLightPageThree{
+  opacity: 0;
+  font-size: 2vh;
+  height: 54.6vh;
+  width: 28.5vh;  
+  top: 9vh;
+  left: 6vh;  
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  transition: .6s ease;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  text-wrap: wrap;
+  color: black;
+  -webkit-mask-image: linear-gradient(
+    to right, /* gradient direction */
+    rgba(0,0,0,0) 0%, /* transparent left 3% */
+    rgba(0,0,0,1) 3%, /* visible in the middle start */
+    rgba(0,0,0,1) 97%, /* visible in the middle end */ 
+    rgba(0,0,0,0) 100% /* transparent right 3% */ 
+  );  
+}
+
+.phoneScreenPageThree{
+  opacity: 0;
+  height: 54.6vh;
+  width: 28.5vh;  
+  top: 9vh;
+  left: 6vh;  
+  position: absolute;
+  overflow-y: auto;
+  border-radius: 10px;
+  transition: .6s ease;
+  filter: drop-shadow(0px 0px 50px rgb(255, 255, 255));
+}
+
+.phoneLightPageThree:hover, .phoneScreenPageThree:hover{
+  opacity: 1;
+}
+
+/*
+Source - https://stackoverflow.com/a
+Posted by Anderson Green, modified by community. See post 'Timeline' for change history
+Retrieved 2025-11-28, License - CC BY-SA 4.0
+*/
+
+.box{
+    display: block;
+    position: relative;
+    z-index: 100;
+    width: 100%;
+}
+
+.myFrame{
+  border: 0px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Page Four */
+/* 
+Rather than rows and columns, the objects will basically be floating, we will exploit the z-index 
+There will be a unit package It will be a container, with the image in the conainer and a label that overlays upon selection.
+*/
+.pageFourContainer{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* sketchbook */
+.sketchbookContainerPageFour{
+  display: flex;
+  position: absolute;
+  background-color: transparent;
+  border: 0;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  padding: 5vh;
+  color: transparent;
+  transition: 1s ease;  
+  margin: 0vh 0vh 20vh 0vh;
+}
+
+.sketchbookLabelPageFour{
+  opacity: 1;
+  position: absolute;
+  background-color: transparent;
+  margin: auto;
+}
+
+.sketchbookContainerPageFour:hover{
+  filter: drop-shadow( 5px 5px 5px white);
+  color: white;
+}
+
+/* Text */
+.textContainerPageFour{
+  display: flex;
+  position: absolute;
+  background-color: transparent;
+  border: 0;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  padding: 5vh;
+  font-size: 30vh;
+  font-weight: bold;
+  pointer-events: none;
+}
+
+/* tennis */
+.tennisContainerPageFour{
+  display: flex;
+  background-color: transparent;
+  align-items: center;
+  justify-content: center;
+  padding: 5vh;
+  z-index: 2;
+  border: 1px dashed transparent;
+  animation: throw;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;   
+  margin: 100vh 100vh 0vh 0vh;
+  color: transparent;
+  transition: 1s ease;  
+}
+
+.tennisLabelPageFour{
+  opacity: 1;
+  position: absolute;
+  background-color: transparent;
+  margin: auto;
+  pointer-events: none;
+}
+
+.tennisContainerPageFour:hover{
+  filter: drop-shadow( 5px 5px 5px white);
+  color: white;
+}
+
+/* bincoular */
+.binocularContainerPageFour{
+  position: absolute;
+  display: flex;
+  background-color: transparent;
+  border: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 5vh;
+  z-index: 3;
+  border: 1px dashed transparent;
+  margin: 10vh 150vh 40vh 10vh;
+  color: transparent;
+  transition: 1s ease;  
+}
+
+.binocularLabelPageFour{
+  opacity: 1;
+  position: absolute;
+  background-color: transparent;
+  margin: auto;
+  pointer-events: none;
+}
+
+.binocularContainerPageFour:hover{
+  filter: drop-shadow( 5px 5px 5px white);
+  color: white;
+}
+
+/* pottery */
+.potteryContainerPageFour{
+  display: flex;
+  position: absolute;
+  background-color: transparent;
+  border: 0;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  padding: 5vh;
+  z-index: 4;
+  border: 1px dashed transparent;
+  margin: 100vh 100vh 60vh 10vh;
+  color: transparent;
+  transition: 1s ease;  
+}
+
+.potteryLabelPageFour{
+  opacity: 1;
+  position: absolute;
+  background-color: transparent;
+  margin: auto;
+  pointer-events: none;
+}
+
+.potteryContainerPageFour:hover{
+  filter: drop-shadow( 5px 5px 5px white);
+  color: white;
+}
+
+/* homecafe */
+.homecafeContainerPageFour{
+  display: flex;
+  position: absolute;
+  background-color: transparent;
+  border: 0;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  padding: 5vh;
+  z-index: 5;
+  border: 1px dashed transparent;
+  margin: 100vh -30vh 100vh 100vh;
+  color: transparent;
+  transition: 1s ease;
+}
+
+.homecafeLabelPageFour{
+  opacity: 1;
+  position: absolute;
+  background-color: transparent;
+  margin: auto;
+  pointer-events: none;
+}
+
+.homecafeContainerPageFour:hover{
+  filter: drop-shadow( 5px 5px 5px white);
+  color: white;
+}
+@keyframes rotater {
+  0%   {transform: rotate(0deg);}
+  25%  {transform: rotate(45deg);}
+  50%  {transform: rotate(0deg);}
+  75%  {transform: rotate(45deg);}
+  100% {transform: rotate(0deg);}
+}
+
+@keyframes hover {
+  0%   {translate: 0vh 0vh; transform: rotate(0deg);}
+  25%   {transform: rotate(3deg);}
+  50% {translate: 0vh 3vh; transform: rotate(0deg);}
+  75%   {transform: rotate(3deg);}
+  100% {translate: 0vh 0vh; transform: rotate(0deg);}
+}
+
+@keyframes throw {
+  0%   {translate: 0vh 20vh;transform: rotate(0deg);}
+  25%  {translate: 25vh -10vh;}
+  50%  {translate: 50vh -25vh;transform: rotate(45deg);}
+  75%  {translate: 75vh -10vh;}
+  100% {translate: 100vh 20vh;transform: rotate(60deg);}
+}
+
+.imagePageFour{
+  animation: hover;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.imageOnePageFour{
+  animation: hover;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.imageTwoPageFour{
+  animation: hover;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.47, 0, 0.75, 0.72);
+}
+
+/* Page Five */
+/* This page is pretty simple too. One column, two rows. The second row contains 6 columns. */
+.pageFiveContainer{
+  width: 70%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  color: black;
+  filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.29));
+}
+
+.rowOnePageFive{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50vh;
+  background-image: url('src/assets/Images/Contact_Header.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  user-select: none;
+}
+
+.contentPageFive{
+  width: 60vh;
+}
+
+.contentTitlePageFive{
+  font-weight: bold;
+  font-size: 5vh;
+  font-family: "Praise", cursive;
+  font-weight: 400;
+  font-style: normal;
+  background-color: rgba(255, 234, 0, 0.493);
+  width: fit-content;
+}
+
+.rowTwoPageFive{
+  width: 116.5vh;
+  display: flex;
+  flex-direction: column;
+  background-repeat: no-repeat;
+  writing-mode: vertical-lr;
+}
+
+.rowTwoColumnFirstPageFive{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10%;
+  height: 30vh;
+  background-image: url('src/assets/Images/Contact_TabOne.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin: auto;
+}
+
+.rowTwoColumnFirstPageFive:hover {
+  animation-name: rip; 
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;  
+  animation-direction: normal;
+  animation-play-state: running;
+}
+
+@keyframes rip {
+  0% {translate: 0vh 0vh; transform: scale(1), rotate(0deg);}
+  25% {transform: rotate(15deg);}
+  30% {transform: rotate(0deg);}
+  100% {translate: 0vh 3vh; transform: scale(1.1);}
 }
