@@ -479,6 +479,7 @@ There will be a unit package It will be a container, with the image in the conai
 }
 
 .rowOnePageFive{
+  font-size: 3vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -571,7 +572,7 @@ There will be a unit package It will be a container, with the image in the conai
 .controlContainer{
   display: flex;
   flex-direction: row;
-  width: 140vh;
+  width: fit-content;
   height: 25vh;
   font-size: 3vh;
   flex-direction: row;
