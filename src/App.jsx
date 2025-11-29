@@ -54,14 +54,14 @@ function App() {
 
     {isPortrait && (
       <div className="portraitScreen">
-        <img className='logo' src ="src/assets/Images/LandscapeIcon.svg" />
+        <img className='logo' src ="/assets/Images/LandscapeIcon.svg" />
         <h1>Please rotate your device</h1>
       </div>
     )}
 
     {!isPortrait && !isModelLoaded && (
       <div className="loadingScreen">
-        <img className='logo' src ="src/assets/Images/KEF_Logo_Outline_White.svg" />
+        <img className='logo' src ="/assets/Images/KEF_Logo_Outline_White.svg" />
           <h1>Loading…</h1>
       </div>
     )}
