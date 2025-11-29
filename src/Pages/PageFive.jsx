@@ -4,12 +4,12 @@ import '../App.css'
 
 function PageFive({id}) {
   const tabs = [
-    {id: 1, text: "LinkedIn", img: "/src/assets/Images/Contact_TabOne.png", link: "https://www.linkedin.com/in/erica-joseph-93b3501b1/"},
-    {id: 2, text: "GitHub", img: "/src/assets/Images/Contact_TabTwo.png", link: "https://github.com/erica-joseph"},
-    {id: 3, text: "Website", img: "/src/assets/Images/Contact_TabThree.png", link: "https://ericajoseph.com/"},
-    {id: 4, text: "Instagram", img: "/src/assets/Images/Contact_TabFour.png", link: "https://www.instagram.com/hey_kidseatfree"},
-    {id: 5, text: " ", img: "/src/assets/Images/Contact_TabFive.png", link: ""},
-    {id: 6, text: "e-mail", img: "/src/assets/Images/Contact_TabSix.png", link: "ericagjoseph@outlook.com"}
+    {id: 1, text: "LinkedIn", img: "src/assets/Images/Contact_TabOne.png", link: "https://www.linkedin.com/in/erica-joseph-93b3501b1/"},
+    {id: 2, text: "GitHub", img: "src/assets/Images/Contact_TabTwo.png", link: "https://github.com/erica-joseph"},
+    {id: 3, text: "Website", img: "src/assets/Images/Contact_TabThree.png", link: "https://ericajoseph.com/"},
+    {id: 4, text: "Instagram", img: "src/assets/Images/Contact_TabFour.png", link: "https://www.instagram.com/hey_kidseatfree"},
+    {id: 5, text: " ", img: "src/assets/Images/Contact_TabFive.png", link: ""},
+    {id: 6, text: "e-mail", img: "src/assets/Images/Contact_TabSix.png", link: "ericagjoseph@outlook.com"}
   ]
   return (
     <>

@@ -55,12 +55,12 @@ function Interface() {
       <img
         onClick={goToSectionLeft}
         className='leftArrow'
-        src='/src/assets/Images/Arrow.svg'
+        src='src/assets/Images/Arrow.svg'
       />
       <img
         onClick={goToSectionRight}
         className='rightArrow'
-        src='/src/assets/Images/Arrow.svg'
+        src='src/assets/Images/Arrow.svg'
       />
     </>
   );

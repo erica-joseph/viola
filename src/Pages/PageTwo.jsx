@@ -11,7 +11,7 @@ function PageTwo({id}) {
     <div id={id} className='pageTwoContainer'>
       {/* Row 1 */}
       <div className='rowOnePageTwo'>
-        <img src = '/src/assets/Images/Note.png' className='notePageTwo'/>
+        <img src = 'src/assets/Images/Note.png' className='notePageTwo'/>
       </div>
     </div>
     </>
