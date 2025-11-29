@@ -1,15 +1,22 @@
 //Note
 
 import '../App.css'
+import head from '../assets/Images/Contact_Header.png'
+import one from '../assets/Images/Contact_TabOne.png'
+import two from '../assets/Images/Contact_TabTwo.png'
+import three from '../assets/Images/Contact_TabThree.png'
+import four from '../assets/Images/Contact_TabFour.png'
+import five from '../assets/Images/Contact_TabFive.png'
+import six from '../assets/Images/Contact_TabSix.png'
 
 function PageFive({id}) {
   const tabs = [
-    {id: 1, text: "LinkedIn", img: "/assets/Images/Contact_TabOne.png", link: "https://www.linkedin.com/in/erica-joseph-93b3501b1/"},
-    {id: 2, text: "GitHub", img: "/assets/Images/Contact_TabTwo.png", link: "https://github.com/erica-joseph"},
-    {id: 3, text: "Website", img: "/assets/Images/Contact_TabThree.png", link: "https://ericajoseph.com/"},
-    {id: 4, text: "Instagram", img: "/assets/Images/Contact_TabFour.png", link: "https://www.instagram.com/hey_kidseatfree"},
-    {id: 5, text: " ", img: "/assets/Images/Contact_TabFive.png", link: ""},
-    {id: 6, text: "e-mail", img: "/assets/Images/Contact_TabSix.png", link: "ericagjoseph@outlook.com"}
+    {id: 1, text: "LinkedIn", img: {one}, link: "https://www.linkedin.com/in/erica-joseph-93b3501b1/"},
+    {id: 2, text: "GitHub", img: {two}, link: "https://github.com/erica-joseph"},
+    {id: 3, text: "Website", img: {three}, link: "https://ericajoseph.com/"},
+    {id: 4, text: "Instagram", img: {four}, link: "https://www.instagram.com/hey_kidseatfree"},
+    {id: 5, text: " ", img: {five}, link: ""},
+    {id: 6, text: "e-mail", img: {six}, link: "ericagjoseph@outlook.com"}
   ]
   return (
     <>
@@ -17,7 +24,7 @@ function PageFive({id}) {
     {/* Page Five */}
     <div id={id} className='pageFiveContainer'>
       {/* Row 1 */}
-      <div className='rowOnePageFive'>
+      <div className='rowOnePageFive' style ={{backgroundImage: {head}}}>
         <div className='contentPageFive'>
             <div className='contentTitlePageFive'>Swing on by to learn more!</div>
 

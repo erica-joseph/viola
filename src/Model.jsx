@@ -8,6 +8,7 @@ import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass.js';
 import { SkeletonHelper } from 'three';
 
+import model from './assets/Model/Viola_Model.glb'
 
 export default function Model({currentPose, currentAngle, onLoaded}) {
   const mountRef = useRef(null);
@@ -120,7 +121,7 @@ const helper = new THREE.CameraHelper(camera);
     // Load Model
     const loader = new GLTFLoader();
     loader.load(
-      '/Model/Viola_Model.glb', 
+      model, 
       (gltf) => {
         modelRef.current = gltf.scene;
 

@@ -485,7 +485,6 @@ There will be a unit package It will be a container, with the image in the conai
   align-items: center;
   width: 100%;
   height: 50vh;
-  background-image: url('/assets/Images/Contact_Header.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -520,7 +519,6 @@ There will be a unit package It will be a container, with the image in the conai
   align-items: center;
   width: 10%;
   height: 30vh;
-  background-image: url('/assets/Images/Contact_TabOne.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -688,7 +686,6 @@ There will be a unit package It will be a container, with the image in the conai
   margin: auto;
   width: 100vw;
   height: 100vh;
-  background-image: url('/assets/Images/Gradient_Noise_001.svg');
   background-repeat: no-repeat;
   background-position: center;
   z-index: 20;

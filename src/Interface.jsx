@@ -6,6 +6,9 @@ import PageThree from './Pages/PageThree.jsx';
 import PageFour from './Pages/PageFour.jsx';
 import PageFive from './Pages/PageFive.jsx';
 import PageSix from './Pages/PageSix.jsx';
+
+import arrow from './assets/Images/Arrow.svg';
+
 import Model from './Model.jsx'
 
 function Interface() {
@@ -55,12 +58,12 @@ function Interface() {
       <img
         onClick={goToSectionLeft}
         className='leftArrow'
-        src='/assets/Images/Arrow.svg'
+        src={arrow}
       />
       <img
         onClick={goToSectionRight}
         className='rightArrow'
-        src='/assets/Images/Arrow.svg'
+        src={arrow}
       />
     </>
   );

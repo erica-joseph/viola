@@ -7,6 +7,10 @@ import Interface from './Interface.jsx'
 import './App.css'
 import html2canvas from "html2canvas";
 
+import theNoise from './assets/Images/Gradient_Noise_001.svg'
+import portrait from './assets/Images/LandscapeIcon.svg'
+import logo from './assets/Images/KEF_Logo_Outline_White.svg'
+
 function App() {
   const [count, setCount] = useState(0)
   const [pose, setPose] = useState("Music");
@@ -48,20 +52,20 @@ function App() {
     <div className ="controls">
       <Controls changePose={setPose} changeAngle ={setAngle}/>
     </div>
-    <div className='noise'>
+    <div className='noise' style={{ backgroundImage: `url(${theNoise})` }}>
     </div> 
     </div>
 
     {isPortrait && (
       <div className="portraitScreen">
-        <img className='logo' src ="/assets/Images/LandscapeIcon.svg" />
+        <img className='logo' src = {portrait} />
         <h1>Please rotate your device</h1>
       </div>
     )}
 
     {!isPortrait && !isModelLoaded && (
       <div className="loadingScreen">
-        <img className='logo' src ="/assets/Images/KEF_Logo_Outline_White.svg" />
+        <img className='logo' src = {logo} />
           <h1>Loading…</h1>
       </div>
     )}
