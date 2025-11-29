@@ -29,7 +29,7 @@ function PageFive({id}) {
       {/* Row 2 */}
       <div className='rowTwoPageFive'>
         {tabs.map ((tabs, index) =>(
-        <div className='rowTwoColumnFirstPageFive' style = {{backgroundImage: `url('${tabs.img}')`}}>
+        <div key={index} className='rowTwoColumnFirstPageFive' style = {{backgroundImage: `url('${tabs.img}')`}}>
             <a target = "_blank" href = {tabs.link}> {tabs.text} </a>
         </div>
         ))}

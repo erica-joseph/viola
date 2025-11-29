@@ -9,7 +9,7 @@ import { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass.js';
 import { SkeletonHelper } from 'three';
 
 
-export default function Model({currentPose, currentAngle}) {
+export default function Model({currentPose, currentAngle, onLoaded}) {
   const mountRef = useRef(null);
 
   //Dark Blue: #082e68
@@ -124,8 +124,8 @@ const helper = new THREE.CameraHelper(camera);
       (gltf) => {
         modelRef.current = gltf.scene;
 
-  // Only add once
-  scene.add(modelRef.current);
+        // Only add once
+        scene.add(modelRef.current);
         //modelRef.current.rotation.y = Math.PI; 
         
         gltf.scene.traverse((node) => {
@@ -146,7 +146,7 @@ const helper = new THREE.CameraHelper(camera);
 
         if(node.isSkinnedMesh){
           if(node.name === "Cube005"){
-            console.log("Heyo")
+            //console.log("Heyo")
             node.visible = false;
           }
         }
@@ -155,14 +155,16 @@ const helper = new THREE.CameraHelper(camera);
 
         mixerRef.current = new THREE.AnimationMixer(modelRef.current);
 
-    gltf.animations.forEach((clip) => {
+      gltf.animations.forEach((clip) => {
       actionsRef.current[clip.name] = mixerRef.current.clipAction(clip);
+      onLoaded();
+      console.log("Model is Ready");
     });
 
-    console.log(gltf.animations.map(a => ({
-  name: a.name,
-  tracks: a.tracks.map(t => t.name)
-})));
+//     console.log(gltf.animations.map(a => ({
+//   name: a.name,
+//   tracks: a.tracks.map(t => t.name)
+// })));
 
     setActionsLoaded(true); 
 
@@ -217,7 +219,7 @@ return () => {
 
  // Update pose
  useEffect(() => {
-   console.log("Available animations:", Object.keys(actionsRef.current));
+   //console.log("Available animations:", Object.keys(actionsRef.current));
    if (!actionsLoaded) return; 
    const actions = actionsRef.current;
    if (!actions) return;
@@ -233,13 +235,13 @@ return () => {
 
 
 useEffect(() => {
-  console.log("Angel changed.")
+  //console.log("Angel changed.")
 
-  console.log(currentAngle);
+  //console.log(currentAngle);
   if (modelRef.current) {
   if(currentAngle == "0"){
     modelRef.current.rotation.y = 0; 
-    console.log("Angel changed to 0.")
+    //console.log("Angel changed to 0.")
   }
   else if(currentAngle == "90"){
     modelRef.current.rotation.y = Math.PI/2; 

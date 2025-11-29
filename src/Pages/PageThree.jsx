@@ -19,7 +19,7 @@ function PageThree({id}) {
       {/* Row 1  ${menu_background}*/}
       <div className='rowOnePageTwo'>
         {phoneContents.map((phone, index) => (
-        <div className='phonePageThree' style = {{backgroundImage: `url(${phone.img})`}}>
+        <div key={index} className='phonePageThree' style = {{backgroundImage: `url(${phone.img})`}}>
           <div className='phoneScreenPageThree'>
             <div className='phoneLightPageThree'>
               <div className="box">
