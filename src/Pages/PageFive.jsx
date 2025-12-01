@@ -16,7 +16,7 @@ function PageFive({id}) {
     {id: 3, text: "Website", img: three, link: "https://ericajoseph.com/"},
     {id: 4, text: "Instagram", img: four, link: "https://www.instagram.com/hey_kidseatfree"},
     {id: 5, text: " ", img: five, link: ""},
-    {id: 6, text: "e-mail", img: six, link: "ericagjoseph@outlook.com"}
+    {id: 6, text: "e-mail", img: six, link: "mailto:ericagjoseph@outlook.com"}
   ]
   return (
     <>
